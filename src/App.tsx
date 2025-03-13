@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import "./App.css";
 import Button from "./components/shared/Button";
 import Input from "./components/shared/Input";
@@ -6,9 +6,17 @@ import Lists from "./components/nonshared/Lists";
 import { dataSetProps } from "./interfaces/Interfaces";
 
 
+const getDatFromLocalStorage =()=>{
+  const data = localStorage.getItem('todo-data')
+  if(data){
+    return JSON.parse(data)
+  }
+  return []
+}
+
 function App() {
   // -------------------- State & Ref ------------------------
-  const [data, setData] = useState<dataSetProps[]>([]);
+  const [data, setData] = useState<dataSetProps[]>(getDatFromLocalStorage());
   const [inputValue, setInputValue] = useState<string>("");
   const inputRef = useRef<string>("");
 
@@ -18,6 +26,11 @@ function App() {
     inputRef.current = e.target.value; // Store latest value in ref
   }, []);
 
+  // ---------------------Adding to LocalStorage-----------------------------
+
+  useEffect(()=>{
+    localStorage.setItem('todo-data',JSON.stringify(data))
+  },[data])
   // -------------------- Handle Button Click ------------------------
   const CLickMe = useCallback(() => {
     if (!inputRef.current.trim()) return; // Prevent empty input
