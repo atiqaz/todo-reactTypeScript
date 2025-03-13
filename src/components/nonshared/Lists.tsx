@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { ItemspropsInterface, ListsProps } from "../../interfaces/Interfaces";
 import { FaEdit, FaCheck, FaTrash } from "react-icons/fa";
-import { GrCompliance } from "react-icons/gr";
+
 import { ImCheckboxChecked, ImCheckboxUnchecked } from "react-icons/im";
 
 const Lists: React.FC<ListsProps> = React.memo(
