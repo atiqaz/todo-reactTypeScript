@@ -1,0 +1,316 @@
+.app-container {
+  max-width: 400px;
+  margin: 20px auto;
+  text-align: center;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h2 {
+  color: #333;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* Input Container */
+.input-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+}
+
+/* Styled Input */
+.styled-input {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+  background: #f8f9fa;
+  color: #333;
+}
+
+/* Input Focus Effect */
+.styled-input:focus {
+  border-color: #1a73e8;
+  box-shadow: 0 0 8px rgba(26, 115, 232, 0.3);
+  background: #fff;
+  transform: scale(1.02);
+}
+
+/* Placeholder Text */
+.styled-input::placeholder {
+  color: #888;
+  font-size: 14px;
+}
+
+/* Styled Button */
+.styled-button {
+  background: #1a73e8;
+  color: #fff;
+  font-size: 16px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  animation: buttonPop 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.styled-button:hover {
+  background: #1558c2;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Active Click Effect */
+.styled-button:active {
+  background: #0d47a1;
+  transform: scale(0.95);
+}
+
+/* Button Pop Animation */
+@keyframes buttonPop {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Lists Container */
+.lists-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* Items Grid */
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  width: 100%;
+  max-width: 600px;
+  padding: 10px;
+}
+
+/* Item Card */
+.item-card {
+  background: #f9fafb;
+  border-radius: 10px;
+  padding: 15px;
+  border-left: 5px solid #8bb2da;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  animation: fadeInItem 0.5s ease-in-out;
+}
+
+/* Item Hover Effect */
+.item-card:hover {
+  transform: scale(1.05);
+  background: #e9ecef;
+}
+
+/* Fade-in Animation for Items */
+@keyframes fadeInItem {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Item Text */
+.item-text {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* No Items Message */
+.no-items {
+  margin-top: 10px;
+  color: #999;
+  font-size: 14px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.icons-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.icon {
+  cursor: pointer;
+  font-size: 18px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+}
+
+/* Edit Icon */
+.edit-icon {
+  color: #1a73e8;
+}
+
+.edit-icon:hover {
+  color: #1558c2;
+}
+
+/* Update Icon */
+.update-icon {
+  color: #28a745;
+}
+
+.update-icon:hover {
+  color: #218838;
+}
+
+/* Delete Icon */
+.delete-icon {
+  color: #dc3545;
+}
+
+.delete-icon:hover {
+  color: #c82333;
+}
+
+/* Delete Icon */
+.completed-icon {
+  color: #8bb2da;
+}
+
+.completed-icon:hover {
+  color: #3cb82b;
+}
+
+/* Edit Input */
+.edit-input {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.edit-input:focus {
+  border-color: #1a73e8;
+  box-shadow: 0 0 5px rgba(26, 115, 232, 0.3);
+}
+
+/* Completed Item Styling */
+.item-card.completed {
+  background: #d4edda;
+  /* Light green background */
+  border-left: 5px solid #28a745;
+  /* Green border */
+  opacity: 0.7;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Completed Item Text */
+.item-card.completed .item-text {
+  text-decoration: line-through;
+  color: #155724;
+  /* Dark green text */
+}
+
+/* Disable Edit for Completed Items */
+.item-card.completed .edit-icon {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Change Completed Icon */
+.item-card.completed .completed-icon {
+  color: #218838;
+}
+
+.updatedAt {
+  margin-left: 5px;
+}
+
+/* Filter Buttons */
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+  gap: 10px;
+}
+
+.filter-button {
+  background: #e0e0e0;
+  color: #333;
+  font-size: 14px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.filter-button:hover {
+  background: #d6d6d6;
+}
+
+.filter-button.active {
+  background: #1a73e8;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Responsive Design */
+@media (max-width: 500px) {
+  .styled-input {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .styled-button {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+}
